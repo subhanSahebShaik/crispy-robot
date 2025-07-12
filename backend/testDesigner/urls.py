@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from graphManager import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('data/', views.load_data),
+    path('create-node/', views.create_node),
+    path('create-relation/', views.create_relation),
+    path('generate-gherkin/', views.generate_gherkin_from_file),
 ]

@@ -1,0 +1,1006 @@
+[
+  {
+    "objects": [
+      {
+        "name": "ingestion_list_page",
+        "type": "page"
+      },
+      {
+        "name": "orion_logo"
+      },
+      {
+        "name": "global_search",
+        "type": "input"
+      },
+      {
+        "name": "notifications_icon",
+        "type": "button"
+      },
+      {
+        "name": "account_dropdown",
+        "type": "button"
+      },
+      {
+        "name": "view_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "user_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "advanced_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "organization_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "type_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "status_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "platfrom_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "restrict_search_filter",
+        "type": "dropdown"
+      },
+      {
+        "name": "execution_history_option",
+        "type": "button"
+      },
+      {
+        "name": "group_by_name_option",
+        "type": "button"
+      },
+      {
+        "name": "all_users_option",
+        "type": "button"
+      },
+      {
+        "name": "current_user_option",
+        "type": "button"
+      },
+      {
+        "name": "include_drafts_option",
+        "type": "button"
+      },
+      {
+        "name": "organization_search",
+        "type": "input"
+      },
+      {
+        "name": "organization_tree"
+      },
+      {
+        "name": "organization_checkbox",
+        "type": "button"
+      },
+      {
+        "name": "organization_count",
+        "type": "value"
+      },
+      {
+        "name": "source_type",
+        "type": "button"
+      },
+      {
+        "name": "glossary_type",
+        "type": "button"
+      },
+      {
+        "name": "type_count",
+        "type": "value"
+      },
+      {
+        "name": "status_label_with_checkbox",
+        "type": "button"
+      },
+      {
+        "name": "status_count",
+        "type": "value"
+      },
+      {
+        "name": "platform_search",
+        "type": "input"
+      },
+      {
+        "name": "platform_search_clear",
+        "type": "button"
+      },
+      {
+        "name": "platform_label_with_checkbox",
+        "type": "button"
+      },
+      {
+        "name": "platform_count",
+        "type": "value"
+      },
+      {
+        "name": "24_hours_option",
+        "type": "button"
+      },
+      {
+        "name": "past_week_option",
+        "type": "button"
+      },
+      {
+        "name": "past_month_option",
+        "type": "button"
+      },
+      {
+        "name": "past_6_months_option",
+        "type": "button"
+      },
+      {
+        "name": "date_option",
+        "type": "button"
+      },
+      {
+        "name": "date_range_option",
+        "type": "button"
+      },
+      {
+        "name": "ingestion_list_title"
+      },
+      {
+        "name": "card_view_icon",
+        "type": "button"
+      },
+      {
+        "name": "list_view_icon",
+        "type": "button"
+      },
+      {
+        "name": "ingestion_list_search",
+        "type": "input"
+      },
+      {
+        "name": "ingestion_list_search_clear",
+        "type": "button"
+      },
+      {
+        "name": "more_icon",
+        "type": "button"
+      },
+      {
+        "name": "print_option",
+        "type": "button"
+      },
+      {
+        "name": "download_as_csv_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column"
+      },
+      {
+        "name": "platform_column"
+      },
+      {
+        "name": "status_column"
+      },
+      {
+        "name": "scanned_by_column"
+      },
+      {
+        "name": "last_scanned_column"
+      },
+      {
+        "name": "actions_column"
+      },
+      {
+        "name": "run_time_column"
+      },
+      {
+        "name": "table_header"
+      },
+      {
+        "name": "table_records",
+        "type": "value"
+      },
+      {
+        "name": "record_icon",
+        "type": "value"
+      },
+      {
+        "name": "record_name",
+        "type": "value"
+      },
+      {
+        "name": "record_org_chip",
+        "type": "value"
+      },
+      {
+        "name": "org_chip_le",
+        "type": "value"
+      },
+      {
+        "name": "org_chip_lob",
+        "type": "value"
+      },
+      {
+        "name": "org_chip_org",
+        "type": "value"
+      },
+      {
+        "name": "record_platform",
+        "type": "value"
+      },
+      {
+        "name": "record_status",
+        "type": "value"
+      },
+      {
+        "name": "record_scanned_by",
+        "type": "value"
+      },
+      {
+        "name": "record_last_scanned",
+        "type": "value"
+      },
+      {
+        "name": "record_edit",
+        "type": "button"
+      },
+      {
+        "name": "record_download",
+        "type": "button"
+      },
+      {
+        "name": "record_run_log",
+        "type": "button"
+      },
+      {
+        "name": "record_run",
+        "type": "button"
+      },
+      {
+        "name": "record_stop",
+        "type": "button"
+      },
+      {
+        "name": "record_pause",
+        "type": "button"
+      },
+      {
+        "name": "record_resume",
+        "type": "button"
+      },
+      {
+        "name": "name_column_sort_icon",
+        "type": "button"
+      },
+      {
+        "name": "name_column_more_icon",
+        "type": "dropdown"
+      },
+      {
+        "name": "name_column_unsort_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column_sort_by_asc_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column_sort_by_desc_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column_filter_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column_hide_option",
+        "type": "button"
+      },
+      {
+        "name": "name_column_show_columns",
+        "type": "button"
+      },
+      {
+        "name": "pagination_total",
+        "type": "value"
+      },
+      {
+        "name": "rows_per_page_value",
+        "type": "value"
+      },
+      {
+        "name": "rows_per_page_dropdown",
+        "type": "dropdown"
+      },
+      {
+        "name": "5_rows_option",
+        "type": "button"
+      },
+      {
+        "name": "10_rows_option",
+        "type": "button"
+      },
+      {
+        "name": "20_rows_option",
+        "type": "button"
+      },
+      {
+        "name": "50_rows_option",
+        "type": "button"
+      },
+      {
+        "name": "100_rows_option",
+        "type": "button"
+      },
+      {
+        "name": "previous_page_button",
+        "type": "button"
+      },
+      {
+        "name": "page_number_button",
+        "type": "button"
+      },
+      {
+        "name": "selected_page_button",
+        "type": "button"
+      },
+      {
+        "name": "next_page_button",
+        "type": "button"
+      },
+      {
+        "name": "pagination_wrapper"
+      }
+    ],
+    "relations": [
+      {
+        "from": "ingestion_list_page",
+        "to": "more_icon",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "more_icon",
+        "to": "download_as_csv_option",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "more_icon",
+        "to": "print_option",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "list_view_icon",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "card_view_icon",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "list_view_icon",
+        "to": "table_records",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "list_view_icon",
+        "to": "table_header",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_icon",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_name",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_org_chip",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_platform",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "orion_logo",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "global_search",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "notifications_icon",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "account_dropdown",
+        "action": "expects",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_status",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_scanned_by",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_last_scanned",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_edit",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_download",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_run_log",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "table_records",
+        "to": "record_run",
+        "action": "displays",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "view_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "user_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "advanced_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "organization_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "type_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "status_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "platfrom_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "restrict_search_filter",
+        "action": "navigates",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "view_filter",
+        "to": "execution_history_option",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "view_filter",
+        "to": "group_by_name_option",
+        "action": "click_on",
+        "hypothesis": "displays"
+      },
+      {
+        "from": "user_filter",
+        "to": "all_users_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "user_filter",
+        "to": "current_user_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "advanced_filter",
+        "to": "include_drafts_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "organization_filter",
+        "to": "organization_search",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "organization_filter",
+        "to": "organization_search",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "organization_filter",
+        "to": "organization_tree",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "organization_filter",
+        "to": "organization_checkbox",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "organization_filter",
+        "to": "organization_count",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "type_filter",
+        "to": "source_type",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "type_filter",
+        "to": "glossary_type",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "type_filter",
+        "to": "type_count",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "status_filter",
+        "to": "status_label_with_checkbox",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "status_filter",
+        "to": "status_count",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "platfrom_filter",
+        "to": "platform_search",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "platfrom_filter",
+        "to": "platform_search_clear",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "platfrom_filter",
+        "to": "platform_label_with_checkbox",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "platfrom_filter",
+        "to": "platform_count",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "24_hours_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "past_week_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "past_month_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "past_6_months_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "date_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "restrict_search_filter",
+        "to": "date_range_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "ingestion_list_title",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "ingestion_list_search",
+        "action": "fills",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "ingestion_list_search",
+        "to": "ingestion_list_search_clear",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "name_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "platform_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "status_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "scanned_by_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "last_scanned_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "actions_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_header",
+        "to": "run_time_column",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "record_org_chip",
+        "to": "org_chip_le",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "record_org_chip",
+        "to": "org_chip_lob",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "record_org_chip",
+        "to": "org_chip_org",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_records",
+        "to": "record_stop",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_records",
+        "to": "record_pause",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "table_records",
+        "to": "record_resume",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column",
+        "to": "name_column_sort_icon",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column",
+        "to": "name_column_more_icon",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_unsort_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_sort_by_asc_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_sort_by_desc_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_filter_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_hide_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "name_column_more_icon",
+        "to": "name_column_show_columns",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "ingestion_list_page",
+        "to": "pagination_wrapper",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "pagination_total",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "rows_per_page_value",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "rows_per_page_dropdown",
+        "to": "5_rows_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "rows_per_page_dropdown",
+        "to": "10_rows_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "rows_per_page_dropdown",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "rows_per_page_dropdown",
+        "to": "20_rows_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "rows_per_page_dropdown",
+        "to": "50_rows_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "rows_per_page_dropdown",
+        "to": "100_rows_option",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "previous_page_button",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "page_number_button",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "selected_page_button",
+        "action": "expects",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "pagination_wrapper",
+        "to": "next_page_button",
+        "action": "click_on",
+        "hypothesis": "holds"
+      },
+      {
+        "from": "execution_history_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "table_records",
+        "to": "pagination_total",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "group_by_name_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "all_users_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "current_user_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "include_drafts_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "organization_search",
+        "to": "organization_tree",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "organization_checkbox",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "source_type",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "glossary_type",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "status_label_with_checkbox",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "platform_label_with_checkbox",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "24_hours_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "past_week_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      },
+      {
+        "from": "past_month_option",
+        "to": "table_records",
+        "hypothesis": "changes",
+        "action": ""
+      }
+    ]
+  }
+]

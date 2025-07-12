@@ -1,80 +1,215 @@
-import React, { useState } from 'react';
+// /src/App.js
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
-import NodeForm from './components/NodeForm';
-import RelationForm from './components/RelationForm';
-import AssertionForm from './components/AssertionForm';
+import RightPanel from './components/RightPanel';
 
-import { ReactFlow, Controls, Background } from '@xyflow/react';
+import {
+  ReactFlow,
+  Controls,
+  Background,
+  applyNodeChanges,
+} from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { Box } from '@mui/material';
-import theme from './theme';
+import { getLayoutedElements } from './utils/layout';
+import {
+  fetchIngestionData,
+  createNode,
+  createRelation,
+  fetchGherkinOutput,
+} from './api/api';
+import CustomNode from './components/CustomNode';
+import CustomEdge from './components/CustomEdge';
 
 function App() {
-  const [formType, setFormType] = useState(null);
+  const [rightPanelType, setRightPanelType] = useState(null);
+  const [gherkinOutput, setGherkinOutput] = useState([]);
+
   const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
+  const [ingestionData, setIngestionData] = useState({ objects: [], relations: [] });
 
-  const handleSaveNode = (data) => {
-    const newNode = {
-      id: `${Date.now()}`,
-      data: { label: `${data.name} (${data.type})` },
-      position: { x: Math.random() * 400, y: Math.random() * 400 },
-    };
-    setNodes((prev) => [...prev, newNode]);
-    setFormType(null);
-  };
+  const handleSaveNode = async (nodeData) => {
+    try {
+      await createNode(nodeData);
 
-  const renderForm = () => {
-    switch (formType) {
-      case 'node':
-        return <NodeForm onSave={handleSaveNode} onClose={() => setFormType(null)} />;
-      case 'relation':
-        return <RelationForm onSave={(data) => console.log(data)} onClose={() => setFormType(null)} />;
-      case 'assertion':
-        return <AssertionForm onSave={(data) => console.log(data)} onClose={() => setFormType(null)} />;
-      default:
-        return null;
+      const updatedObjects = [...ingestionData.objects, nodeData.name];
+      const updatedData = { ...ingestionData, objects: updatedObjects };
+      setIngestionData(updatedData);
+
+      const newNode = {
+        id: `node-${updatedObjects.length - 1}`,
+        type: 'customNode',
+        data: {
+          label: nodeData.name,
+          nodeType: nodeData.type || 'None',
+        },
+        position: { x: 0, y: 0 },
+        sourcePosition: 'right',
+        targetPosition: 'left',
+      };
+
+      const newNodes = [...nodes, newNode];
+      const { nodes: layoutedNodes, edges: layoutedEdges } = await getLayoutedElements(newNodes, edges, 'LR');
+
+      setNodes(layoutedNodes);
+      setEdges(layoutedEdges);
+    } catch (err) {
+      console.error('Error saving node:', err);
     }
   };
 
-  const initialNodes = [
-    { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-    { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
-  ];
-  const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
+  const handleSaveRelation = async (relationData) => {
+    try {
+      await createRelation(relationData);
+
+      const updatedRelations = [...ingestionData.relations, relationData];
+      const updatedData = { ...ingestionData, relations: updatedRelations };
+      setIngestionData(updatedData);
+
+      const nodeMap = {};
+      updatedData.objects.forEach((name, index) => {
+        nodeMap[name] = `node-${index}`;
+      });
+
+      const newEdge = {
+        id: `relation-${edges.length}`,
+        source: nodeMap[relationData.from],
+        target: nodeMap[relationData.to],
+        label: relationData.type === 'holds' ? relationData.action : '',
+        style:
+          relationData.type === 'changes'
+            ? { stroke: '#FF5555', strokeDasharray: '6 3', strokeWidth: 2 }
+            : undefined,
+        data: {
+          type: relationData.type,
+          action: relationData.action,
+        },
+      };
+
+      const { nodes: layoutedNodes, edges: layoutedEdges } = await getLayoutedElements(
+        nodes,
+        [...edges, newEdge],
+        'LR'
+      );
+
+      setNodes(layoutedNodes);
+      setEdges(layoutedEdges);
+    } catch (err) {
+      console.error('Error saving relation:', err);
+    }
+  };
+
+  const onNodesChange = useCallback(
+    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
+    []
+  );
+
+  const handleGherkinView = () => {
+    fetchGherkinOutput()
+      .then((response) => {
+        setGherkinOutput(response.data.gherkin || []);
+        setRightPanelType('gherkin');
+      })
+      .catch((err) => {
+        console.error('Failed to fetch Gherkin', err);
+      });
+  };
+
+  useEffect(() => {
+    const fetchAndLayout = async () => {
+      try {
+        const response = await fetchIngestionData();
+        const data = response.data[0];
+        setIngestionData(data);
+
+        const generateNodes = data.objects.map((obj, index) => ({
+          id: `node-${index}`,
+          type: 'customNode',
+          data: { label: obj.name },
+          position: { x: 0, y: 0 },
+          sourcePosition: 'left',
+          targetPosition: 'right',
+        }));
+
+        const nodeMap = {};
+        data.objects.forEach((node, index) => {
+          nodeMap[node.name] = `node-${index}`;
+        });
+
+        const generateEdges = data.relations.map((rel, index) => ({
+          id: `relation-${index}`,
+          source: nodeMap[rel.from],
+          target: nodeMap[rel.to],
+          label: `${rel.action} - ${rel.hypothesis}`,
+          data: { type: rel.type, action: rel.action },
+        }));
+
+        const { nodes: layoutedNodes, edges: layoutedEdges } = await getLayoutedElements(
+          generateNodes,
+          generateEdges,
+          'LR'
+        );
+
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+      } catch (err) {
+        console.error('Failed to load data', err);
+      }
+    };
+
+    fetchAndLayout();
+  }, []);
+
+  const handlePanelOpen = (type) => {
+    setRightPanelType(type);
+  };
+
+  const handlePanelClose = () => {
+    setRightPanelType(null);
+  };
 
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Header onSelect={setFormType} />
+      <Header onSelect={handlePanelOpen} onGherkinView={handleGherkinView} />
 
-      <Box sx={{ display: 'flex', flex: 1, height: '100%' }}>
+      <Box sx={{ display: 'flex', flex: 1, height: 'calc(100vh - 10%)' }}>
         <div style={{ width: '100%', height: '100%' }}>
           <ReactFlow
-            nodes={initialNodes}
-            edges={initialEdges}
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            nodeTypes={{ customNode: CustomNode }}
+            edgeTypes={{ custom: CustomEdge }}
+            fitView
+          // defaultEdgeOptions={{ type: 'custom' }}
           >
-            <Controls />
-            <Background bgColor={theme.palette.background.paper} />
+            <Controls
+              style={{
+                borderRadius: '8px',
+                color: '#000',
+                padding: 4,
+              }}
+              showInteractive={false}
+            />
+            <Background variant="lines" gap={16} size={1} color="#222" />
           </ReactFlow>
         </div>
 
-        {/* Right Side Panel */}
-        {formType && (
-          <Box
-            sx={{
-              width: '20%',
-              height: '100%',
-              backgroundColor: '#fff',
-              borderLeft: '1px solid #ccc',
-              boxShadow: '-4px 0 12px rgba(0,0,0,0.05)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              transform: 'translateX(0)',
-              transition: 'transform 0.3s ease-in-out',
-            }}
-          >
-            {renderForm()}
-          </Box>
+        {rightPanelType && (
+          <RightPanel
+            type={rightPanelType}
+            onClose={handlePanelClose}
+            onSave={
+              rightPanelType === 'node'
+                ? handleSaveNode
+                : rightPanelType === 'relation'
+                  ? handleSaveRelation
+                  : null
+            }
+            availableNodes={ingestionData.objects}
+            gherkinData={gherkinOutput}
+          />
         )}
       </Box>
     </Box>
